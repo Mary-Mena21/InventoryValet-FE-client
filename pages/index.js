@@ -8,12 +8,12 @@ function Home() {
   const [authUser, setAuthUser] = useState();
 
   const onUpdate = () => {
-    checkUser(user.uid).then((data) => setAuthUser(data));
+    checkUser(user.uid).then((data) => setAuthUser(data[0]));
   };
 
   useEffect(() => {
     onUpdate();
-  }, [onUpdate]);
+  }, []);
 
   console.warn(authUser?.firebaseId);
 
