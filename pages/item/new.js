@@ -1,9 +1,9 @@
-// import ItemForm from '../../components/Forms/ItemForm';
+import ItemForm from '../../components/ItemForm';
 
 const NewItem = () => (
   <div>
     <h2>Add New Item</h2>
-    {/* <ItemForm /> */}
+    <ItemForm />
   </div>
 );
 

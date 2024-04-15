@@ -77,7 +77,7 @@ export default function ItemForm({ itemObj }) {
 
       <Form onSubmit={handleSubmit}>
         <Button variant="primary" type="submit">
-          {itemObj.id ? 'Update' : 'Create'} Session
+          {itemObj.id ? 'Update' : 'Create'} Item
         </Button>
       </Form>
     </>
