@@ -36,8 +36,6 @@ function Home() {
   //   }
   // };
 
-  console.warn(authUser?.firebaseId);
-
   return (
     <>
       {authUser?.firebaseId === user?.uid ? (
