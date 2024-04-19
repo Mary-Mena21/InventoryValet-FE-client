@@ -18,6 +18,7 @@ function Home() {
     getItems().then(setItems);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const onUpdate = () => {
     checkUser(user.uid).then((data) => setAuthUser(data[0]));
   };
@@ -26,7 +27,7 @@ function Home() {
     onUpdate();
     getAllCategories();
     getAllItems();
-  }, []);
+  }, [onUpdate]);
 
   // const handleChange = (e) => {
   //   if (e.target.value === 'Select a Category') {
