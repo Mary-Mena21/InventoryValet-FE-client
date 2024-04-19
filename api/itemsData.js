@@ -1,5 +1,4 @@
-// <<<<<<< displayItems
-//= ======
+
 import { clientCredentials } from '../utils/client';
 
 const dbUrl = 'https://localhost:7191';
@@ -121,4 +120,3 @@ export {
   deleteItem,
   itemsObj,
 };
-// >>>>>>> main
