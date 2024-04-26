@@ -15,7 +15,7 @@ export default function ItemsList() {
         {itemz?.map((item) => (
           // eslint-disable-next-line @next/next/link-passhref
           <>
-            <Link to="/items/[id]" as={`/items/${item.id}`}>
+            <Link passHref href="/items/[id]" as={`/items/${item.id}`}>
               <div className={styles.card}>
                 <h3>{item.name} &rarr;</h3>
                 <p>{item.description}</p>
