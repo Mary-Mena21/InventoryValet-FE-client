@@ -24,10 +24,10 @@
 // =======
 import { clientCredentials } from '../utils/client';
 
-const endpoint = clientCredentials.databaseURL;
+const dbUrl = 'https://localhost:7191';
 
 const getCategories = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/categories`, {
+  fetch(`${dbUrl}/categories`, {
     method: 'GET',
     headers: {
       'content-type': 'application/json',
