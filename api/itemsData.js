@@ -73,7 +73,7 @@ const getSingleItem = (itemId) => new Promise((resolve, reject) => {
 });
 
 const createItem = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/items`, {
+  fetch(`${dbUrl}/items`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
