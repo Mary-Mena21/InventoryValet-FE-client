@@ -22,7 +22,6 @@
 
 // export default getAllCategories;
 // =======
-import { clientCredentials } from '../utils/client';
 
 const dbUrl = 'https://localhost:7191';
 
