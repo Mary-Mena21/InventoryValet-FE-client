@@ -14,7 +14,7 @@ export default function ItemsList({ itemsObj }) {
               <p>{itemsObj.description}</p>
               <p>{itemsObj.image}</p>
               <p>Price: ${itemsObj.price}</p>
-              <p>Category:{itemsObj.categoryId.name}</p>
+              <p>Category:{itemsObj.categoryId}</p>
               <p>Size: {itemsObj.size}</p>
             </div>
           </Link>
@@ -31,10 +31,7 @@ ItemsList.propTypes = {
     description: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    categoryId: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-    }).isRequired,
+    categoryId: PropTypes.number.isRequired,
     size: PropTypes.string.isRequired,
   }).isRequired,
 };
