@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../utils/context/authContext';
 import { checkUser } from '../utils/auth';
 import RegisterForm from '../components/RegisterForm';
-import getAllCategories from '../api/categoryData';
+// import getAllCategories from '../api/categoryData';
 import { getItems } from '../api/itemsData';
 
 import ItemsList from '../components/ItemsList';
@@ -13,7 +13,7 @@ function Home() {
   const { user } = useAuth();
   const [authUser, setAuthUser] = useState();
   // const [dropdowns, setDropdowns] = useState([]);
-  const [itemsObj, setItems] = useState([]);
+  const [items, setItems] = useState([]);
   const getAllItems = () => {
     getItems().then(setItems);
   };
@@ -25,7 +25,7 @@ function Home() {
 
   useEffect(() => {
     onUpdate();
-    getAllCategories();
+    // getAllCategories();
     getAllItems();
   }, [onUpdate]);
 
@@ -43,7 +43,9 @@ function Home() {
         <>
           Hello!
           <br />
-          <ItemsList itemsObj={itemsObj} />
+          {items ? items.map((item) => (
+            <ItemsList key={item.id} itemsObj={item} onUpdate={getAllItems} />
+          )) : 'No inventory'}
         </>
       ) : (
         <RegisterForm user={user} onUpdate={onUpdate} />

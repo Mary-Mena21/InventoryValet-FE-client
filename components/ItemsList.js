@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 import styles from '../styles/Item.module.css';
 import { getItems } from '../api/itemsData';
 // eslint-disable-next-line react/prop-types
-export default function ItemsList() {
+export default function ItemsList({ itemsObj }) {
   const [itemz, setItemz] = useState([]);
   useEffect(() => {
     getItems().then(setItemz);
@@ -17,12 +18,12 @@ export default function ItemsList() {
           <>
             <Link passHref href="/items/[id]" as={`/items/${item.id}`}>
               <div className={styles.card}>
-                <h3>{item.name} &rarr;</h3>
-                <p>{item.description}</p>
-                <p>{item.image}</p>
-                <p>Price: ${item.price}</p>
-                <p>categoryId:{item.categoryId}</p>
-                <p>Size: {item.size}</p>
+                <h3>{itemsObj.name} &rarr;</h3>
+                <p>{itemsObj.description}</p>
+                <p>{itemsObj.image}</p>
+                <p>Price: ${itemsObj.price}</p>
+                {/* <p>Category:{itemsObj.category_id.name}</p> */}
+                <p>Size: {itemsObj.size}</p>
               </div>
             </Link>
           </>
@@ -31,3 +32,18 @@ export default function ItemsList() {
     </div>
   );
 }
+
+ItemsList.propTypes = {
+  itemsObj: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    category_id: PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.bool.isRequired,
+    }).isRequired,
+    size: PropTypes.string.isRequired,
+  }).isRequired,
+};
