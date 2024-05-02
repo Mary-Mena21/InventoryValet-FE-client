@@ -28,7 +28,7 @@ function Home() {
     onUpdate();
     // getAllCategories();
     getAllItems();
-  }, [onUpdate]);
+  }, []);
 
   // const handleChange = (e) => {
   //   if (e.target.value === 'Select a Category') {
