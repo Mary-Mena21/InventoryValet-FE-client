@@ -4,16 +4,17 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../utils/context/authContext';
 import { checkUser } from '../utils/auth';
 import RegisterForm from '../components/RegisterForm';
-import getAllCategories from '../api/categoryData';
+// import getAllCategories from '../api/categoryData';
 import { getItems } from '../api/itemsData';
+import ItemCard from '../components/ItemCard';
 
-import ItemsList from '../components/ItemsList';
+// import ItemsList from '../components/ItemsList';
 
 function Home() {
   const { user } = useAuth();
   const [authUser, setAuthUser] = useState();
   // const [dropdowns, setDropdowns] = useState([]);
-  const [itemsObj, setItems] = useState([]);
+  const [items, setItems] = useState([]);
   const getAllItems = () => {
     getItems().then(setItems);
   };
@@ -25,7 +26,7 @@ function Home() {
 
   useEffect(() => {
     onUpdate();
-    getAllCategories();
+    // getAllCategories();
     getAllItems();
   }, [onUpdate]);
 
@@ -41,9 +42,14 @@ function Home() {
     <>
       {authUser?.firebaseId === user?.uid ? (
         <>
-          Hello!
+          Hello world!
           <br />
-          <ItemsList itemsObj={itemsObj} />
+          {/* <ItemsList /> */}
+          <div className="d-flex flex-wrap justify-content-center">
+            {items?.map((item) => (
+              <ItemCard key={item.id} itemObj={item} onUpdate={getAllItems} />
+            ))}
+          </div>
         </>
       ) : (
         <RegisterForm user={user} onUpdate={onUpdate} />

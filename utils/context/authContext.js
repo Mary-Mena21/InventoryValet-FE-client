@@ -24,10 +24,11 @@ const AuthProvider = (props) => {
   // an object/value = user is logged in
 
   const updateUser = useMemo(
-    () => (uid) => checkUser(uid).then((gamerInfo) => {
-      setUser({ fbUser: oAuthUser, ...gamerInfo });
-    }),
-    [oAuthUser],
+    () => (uid) =>
+      checkUser(uid).then((gamerInfo) => {
+        setUser({ fbUser: oAuthUser, ...gamerInfo });
+      }),
+    [oAuthUser]
   );
 
   useEffect(() => {
@@ -44,7 +45,7 @@ const AuthProvider = (props) => {
           setUser(userObj);
         });
       } else {
-        setOAuthUser(false);
+        setOAuthUser(true);
         setUser(false);
       }
     }); // creates a single global listener for auth state changed
@@ -59,7 +60,7 @@ const AuthProvider = (props) => {
       // as long as user === null, will be true
       // As soon as the user value !== null, value will be false
     }),
-    [user, oAuthUser, updateUser],
+    [user, oAuthUser, updateUser]
   );
 
   return <AuthContext.Provider value={value} {...props} />;
