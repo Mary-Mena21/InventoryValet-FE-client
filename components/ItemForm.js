@@ -63,9 +63,8 @@ export default function ItemForm({ itemObj }) {
         <Form.Control name="price" required value={formInput.price} onChange={handleChange} type="text" />
       </Form.Group>
 
-      <Form.Label>Select Category:</Form.Label>
       <Form.Group className="floatingSelect">
-        <Form.Label>Category</Form.Label>
+        <Form.Label>Select Category:</Form.Label>
         <Form.Select
           name="categoryId"
           onChange={handleChange}
@@ -79,7 +78,7 @@ export default function ItemForm({ itemObj }) {
               key={category.id}
               value={category.id}
             >
-              {category.label}
+              {category.name}
             </option>
           ))}
         </Form.Select>

@@ -50,6 +50,11 @@ function Home() {
               <ItemCard key={item.id} itemObj={item} onUpdate={getAllItems} />
             ))}
           </div>
+
+            {/*{items ? items.map((item) => (
+            <ItemsList key={item.id} itemsObj={item} onUpdate={getAllItems} />
+          )) : 'No inventory'}*/}
+
         </>
       ) : (
         <RegisterForm user={user} onUpdate={onUpdate} />

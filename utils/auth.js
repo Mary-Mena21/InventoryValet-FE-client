@@ -1,38 +1,36 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-const checkUser = (uid) =>
-  new Promise((resolve, reject) => {
-    fetch(`https://localhost:7191/checkuser/${uid}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
+const checkUser = (uid) => new Promise((resolve, reject) => {
+  fetch(`https://localhost:7191/checkuser/${uid}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+  })
+    .then((resp) => {
+      if (resp.status === 204) {
+        resolve({});
+      } else {
+        resolve(resp.json());
+      }
     })
-      .then((resp) => {
-        if (resp.status === 204) {
-          resolve({});
-        } else {
-          resolve(resp.json());
-        }
-      })
-      .catch(reject);
-  });
+    .catch(reject);
+});
 
-const registerUser = (userInfo) =>
-  new Promise((resolve, reject) => {
-    fetch('https://localhost:7191/register', {
-      method: 'POST',
-      body: JSON.stringify(userInfo),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    })
-      .then((resp) => resolve(resp.json()))
-      .catch(reject);
-  });
+const registerUser = (userInfo) => new Promise((resolve, reject) => {
+  fetch('https://localhost:7191/register', {
+    method: 'POST',
+    body: JSON.stringify(userInfo),
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+  })
+    .then((resp) => resolve(resp.json()))
+    .catch(reject);
+});
 
 const signIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
