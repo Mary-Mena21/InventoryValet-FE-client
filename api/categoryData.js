@@ -1,3 +1,18 @@
+//<<<<<<< itemId
+import { clientCredentials } from '../utils/client';
+
+const dbUrl = 'https://localhost:7191';
+
+const endpoint = clientCredentials.databaseURL;
+
+const getCategories = () =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/categories`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+      },
+//=======
 // displayItems
 // const dbUrl = 'https://localhost:7191';
 
@@ -39,8 +54,9 @@ const getCategories = () => new Promise((resolve, reject) => {
       } else {
         resolve([]);
       }
+
     })
-    .catch(reject);
-});
+      .catch(reject);
+  });
 
 export default getCategories;

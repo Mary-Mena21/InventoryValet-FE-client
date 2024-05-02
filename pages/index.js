@@ -6,8 +6,9 @@ import { checkUser } from '../utils/auth';
 import RegisterForm from '../components/RegisterForm';
 // import getAllCategories from '../api/categoryData';
 import { getItems } from '../api/itemsData';
+import ItemCard from '../components/ItemCard';
 
-import ItemsList from '../components/ItemsList';
+// import ItemsList from '../components/ItemsList';
 
 function Home() {
   const { user } = useAuth();
@@ -27,7 +28,7 @@ function Home() {
     onUpdate();
     // getAllCategories();
     getAllItems();
-  }, [onUpdate]);
+  }, []);
 
   // const handleChange = (e) => {
   //   if (e.target.value === 'Select a Category') {
@@ -41,11 +42,19 @@ function Home() {
     <>
       {authUser?.firebaseId === user?.uid ? (
         <>
-          Hello!
+          Hello world!
           <br />
-          {items ? items.map((item) => (
+          {/* <ItemsList /> */}
+          <div className="d-flex flex-wrap justify-content-center">
+            {items?.map((item) => (
+              <ItemCard key={item.id} itemObj={item} onUpdate={getAllItems} />
+            ))}
+          </div>
+
+            {/*{items ? items.map((item) => (
             <ItemsList key={item.id} itemsObj={item} onUpdate={getAllItems} />
-          )) : 'No inventory'}
+          )) : 'No inventory'}*/}
+
         </>
       ) : (
         <RegisterForm user={user} onUpdate={onUpdate} />
