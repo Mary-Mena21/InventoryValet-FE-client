@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 // eslint-disable-next-line @next/next/no-img-element
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
 import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import { deleteSingleItem, getSingleItem } from '../../api/itemsData';
 // import { useAuth } from '../../utils/context/authContext';
