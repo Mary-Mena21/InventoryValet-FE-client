@@ -1,11 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 // eslint-disable-next-line @next/next/no-img-element
 // eslint-disable-next-line import/no-extraneous-dependencies
+// eslint-disable-next-line react-hooks/exhaustive-deps
 import { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import { deleteSingleItem, getSingleItem } from '../../api/itemsData';
 // import { useAuth } from '../../utils/context/authContext';
@@ -25,6 +27,7 @@ export default function ViewItemDetails() {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getItem = () => {
     getSingleItem(id).then((data) => setItemDetails(data));
   };
@@ -32,7 +35,7 @@ export default function ViewItemDetails() {
   useEffect(() => {
     getItem();
     // checkUser(user.uid).then((data) => setAuthUser(data));
-  }, []);
+  }, [getItem]);
 
   return (
     <>
