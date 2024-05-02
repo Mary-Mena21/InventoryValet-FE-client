@@ -111,11 +111,25 @@ const deleteItem = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+
+const deleteSingleItem = (id) =>
+  new Promise((resolve, reject) => {
+    fetch(`${dbUrl}/items/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(resolve)
+      .catch(reject);
+  });
+
 export {
   getItems,
   getSingleItem,
   createItem,
   updateItem,
+  deleteSingleItem,
   deleteItem,
   itemsObj,
 };
