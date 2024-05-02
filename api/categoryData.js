@@ -1,17 +1,17 @@
 //<<<<<<< itemId
-import { clientCredentials } from '../utils/client';
+// import { clientCredentials } from '../utils/client';
 
-const dbUrl = 'https://localhost:7191';
+// const dbUrl = 'https://localhost:7191';
 
-const endpoint = clientCredentials.databaseURL;
+// const endpoint = clientCredentials.databaseURL;
 
-const getCategories = () =>
-  new Promise((resolve, reject) => {
-    fetch(`${endpoint}/categories`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-      },
+// const getCategories = () =>
+//   new Promise((resolve, reject) => {
+//     fetch(`${endpoint}/categories`, {
+//       method: 'GET',
+//       headers: {
+//         'content-type': 'application/json',
+//       },
 //=======
 // displayItems
 // const dbUrl = 'https://localhost:7191';
