@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 function ItemCard({ itemObj }) {
   return (
@@ -27,6 +27,18 @@ function ItemCard({ itemObj }) {
           />
           <Card.Title className="align-self-center text-center fs-4">{itemObj.description}</Card.Title>
         </div>
+      </Link>
+      <Link href={`/item/edit/${itemObj.id}`} passHref>
+        <Button
+          variant="info"
+          style={{
+            backgroundColor: 'transparent',
+            border: 'none',
+            color: 'black',
+          }}
+        >
+          EDIT
+        </Button>
       </Link>
     </Card>
   );

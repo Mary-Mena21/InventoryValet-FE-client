@@ -1,4 +1,3 @@
-
 // import React from 'react';
 // import Link from 'next/link';
 // import PropTypes from 'prop-types';
@@ -36,4 +35,3 @@
 //     size: PropTypes.string.isRequired,
 //   }).isRequired,
 // };
-
