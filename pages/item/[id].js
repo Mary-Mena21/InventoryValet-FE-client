@@ -6,9 +6,10 @@ import { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { FaArrowAltCircleLeft } from 'react-icons/fa';
+// import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import { deleteSingleItem, getSingleItem } from '../../api/itemsData';
 // import { useAuth } from '../../utils/context/authContext';
 // npm i -S react-icons
@@ -68,7 +69,7 @@ export default function ViewItemDetails() {
         <div className="mt-5 d-flex flex-wrap">
           <div className="d-flex flex-row">
             <div>
-              <img
+              <Image
                 // src={itemDetails.image}
                 src="https://via.placeholder.com/400"
                 alt={itemDetails.description}
@@ -76,11 +77,11 @@ export default function ViewItemDetails() {
               />
               <br />
               <br />
-              <Link href="/" passHref style={{ cursor: 'pointer', color: 'blue', hover: 'text-indigo-600' }}>
+              {/* <Link href="/" passHref style={{ cursor: 'pointer', color: 'blue', hover: 'text-indigo-600' }}>
                 <div>
                   <FaArrowAltCircleLeft className="mr-2" /> Back to Items Listing
                 </div>
-              </Link>
+              </Link> */}
             </div>
             <div className="text-black ms-5 details align-self-center">
               <h2>{itemDetails.description}</h2>

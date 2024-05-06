@@ -18,6 +18,22 @@ export default function ItemForm({ itemObj }) {
   const router = useRouter();
   const [formInput, setFormInput] = useState([]);
   const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    getCategories().then(setCategories);
+    if (itemObj.id) {
+      setFormInput({
+        id: itemObj.id,
+        name: itemObj.name,
+        description: itemObj.description,
+        image: itemObj.image,
+        price: itemObj.price,
+        categoryId: itemObj.category_id?.id,
+        size: itemObj.size,
+      });
+    }
+  }, [itemObj]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormInput((prevState) => ({
@@ -25,10 +41,6 @@ export default function ItemForm({ itemObj }) {
       [name]: value,
     }));
   };
-
-  useEffect(() => {
-    getCategories().then(setCategories);
-  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
