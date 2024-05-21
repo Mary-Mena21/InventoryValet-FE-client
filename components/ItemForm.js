@@ -28,7 +28,7 @@ export default function ItemForm({ itemObj }) {
         description: itemObj.description,
         image: itemObj.image,
         price: itemObj.price,
-        categoryId: itemObj.category_id?.id,
+        categoryId: itemObj.category_id.name,
         size: itemObj.size,
       });
     }
@@ -116,7 +116,7 @@ ItemForm.propTypes = {
     name: PropTypes.string,
     description: PropTypes.string,
     image: PropTypes.string,
-    price: PropTypes.string,
+    price: PropTypes.number,
     category_id: PropTypes.shape({
       id: PropTypes.number,
       name: PropTypes.string,
