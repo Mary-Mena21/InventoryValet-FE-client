@@ -31,7 +31,7 @@ function Home() {
     getItems(query).then((data) => {
       setItems(data);
     });
-  }, [onUpdate, query]);
+  }, [query]);
 
   // useEffect(() => {
   //   onUpdate();
