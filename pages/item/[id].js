@@ -41,28 +41,13 @@ export default function ViewItemDetails() {
   return (
     <>
       <div>
-        <div className="d-flex justify-content-end mt-5 mb-0">
+        <div className="d-flex justify-content-start mt-5 mb-0">
           <Link href={`/item/edit/${itemDetails.id}`} passHref>
-            <Button
-              variant="info"
-              style={{
-                backgroundColor: 'transparent',
-                border: 'none',
-                color: 'black',
-              }}
-            >
+            <Button variant="outline-success" className="ms-3 w-30">
               EDIT
             </Button>
           </Link>
-          <Button
-            onClick={deleteItem}
-            style={{
-              backgroundColor: 'transparent',
-              border: 'none',
-              color: 'black',
-            }}
-            className="d-flex justify-content-end"
-          >
+          <Button variant="outline-danger" className="ms-3 w-30" onClick={deleteItem}>
             DELETE
           </Button>
         </div>
@@ -81,7 +66,7 @@ export default function ViewItemDetails() {
                 <div>
                   <FaArrowAltCircleLeft className="mr-2" /> Back to Items Listing
                 </div>
-              </Link> 
+              </Link>
             </div>
             <div className="text-black ms-5 details align-self-center">
               <h2>{itemDetails.description}</h2>

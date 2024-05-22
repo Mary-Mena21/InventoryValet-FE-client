@@ -14,7 +14,8 @@ function ItemCard({ itemObj }) {
         boxShadow: '3px 3px 4px #9e9e9e',
         borderRadius: '10px',
         // Width: '500 px',
-        border: '1px solid black',
+        border: '1px solid gray',
+        cursor: 'pointer',
       }}
     >
       <Link href={`/item/${itemObj.id}`} passHref>
