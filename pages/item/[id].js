@@ -9,7 +9,7 @@ import Link from 'next/link';
 // import Image from 'next/image';
 import { useRouter } from 'next/router';
 // eslint-disable-next-line import/no-extraneous-dependencies
-// import { FaArrowAltCircleLeft } from 'react-icons/fa';
+import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import { deleteSingleItem, getSingleItem } from '../../api/itemsData';
 // import { useAuth } from '../../utils/context/authContext';
 // npm i -S react-icons
