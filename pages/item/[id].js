@@ -3,7 +3,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 // eslint-disable-next-line react-hooks/exhaustive-deps
 import { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Image } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Image from 'next/image';
