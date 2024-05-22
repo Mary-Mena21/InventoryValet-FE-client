@@ -11,11 +11,12 @@ const EditItem = () => {
   useEffect(() => {
     getSingleItem(id).then(setEditItem);
   }, [id]);
-
+  return (
     <div>
       <h2>Edit Item</h2>
       <ItemForm itemObj={editItem} />
-    </div>;
+    </div>
+  );
 };
 
 export default EditItem;
