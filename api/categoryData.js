@@ -1,18 +1,18 @@
-//<<<<<<< itemId
-import { clientCredentials } from '../utils/client';
+// <<<<<<< itemId
+// import { clientCredentials } from '../utils/client';
 
-const dbUrl = 'https://localhost:7191';
+// const dbUrl = 'https://localhost:7191';
 
-const endpoint = clientCredentials.databaseURL;
+// const endpoint = clientCredentials.databaseURL;
 
-const getCategories = () =>
-  new Promise((resolve, reject) => {
-    fetch(`${endpoint}/categories`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-      },
-//=======
+// const getCategories = () =>
+//   new Promise((resolve, reject) => {
+//     fetch(`${endpoint}/categories`, {
+//       method: 'GET',
+//       headers: {
+//         'content-type': 'application/json',
+//       },
+//= ======
 // displayItems
 // const dbUrl = 'https://localhost:7191';
 
@@ -40,22 +40,22 @@ const getCategories = () =>
 
 const dbUrl = 'https://localhost:7191';
 
-const getCategories = () => new Promise((resolve, reject) => {
-  fetch(`${dbUrl}/categories`, {
-    method: 'GET',
-    headers: {
-      'content-type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data) {
-        resolve(Object.values(data));
-      } else {
-        resolve([]);
-      }
-
+const getCategories = () =>
+  new Promise((resolve, reject) => {
+    fetch(`${dbUrl}/categories`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+      },
     })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data) {
+          resolve(Object.values(data));
+        } else {
+          resolve([]);
+        }
+      })
       .catch(reject);
   });
 

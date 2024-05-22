@@ -7,25 +7,26 @@ function ItemCard({ itemObj }) {
   return (
     <Card
       style={{
-        width: '200 px',
-        height: '250px',
+        height: '120px',
         margin: '8px',
         backgroundColor: '#fff',
         color: 'black',
         boxShadow: '3px 3px 4px #9e9e9e',
-        borderRadius: '18px',
+        borderRadius: '10px',
+        // Width: '500 px',
+        border: '1px solid black',
       }}
     >
       <Link href={`/item/${itemObj.id}`} passHref>
-        <div className="d-flex justify-content-start" style={{ padding: '10px 10px 0px 10px', gap: '2rem' }}>
+        <div className="d-flex justify-content-start" style={{ padding: '10px', gap: '10px', width: '260px' }}>
           <Card.Img
             variant="top"
             // src={itemObj.image}
-            src="https://via.placeholder.com/200"
+            src="https://via.placeholder.com/100"
             alt="Item Picture"
-            style={{ height: '200px', width: '200px' }}
+            style={{ height: '100px', width: '100px' }}
           />
-          <Card.Title className="align-self-center text-center fs-4">{itemObj.description}</Card.Title>
+          <Card.Title className="align-self-center text-center fs-6">{itemObj.description}</Card.Title>
         </div>
       </Link>
     </Card>
