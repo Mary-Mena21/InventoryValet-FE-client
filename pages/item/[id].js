@@ -77,11 +77,11 @@ export default function ViewItemDetails() {
               />
               <br />
               <br />
-              {/* <Link href="/" passHref style={{ cursor: 'pointer', color: 'blue', hover: 'text-indigo-600' }}>
+              <Link href="/" passHref style={{ cursor: 'pointer', color: 'blue', hover: 'text-indigo-600' }}>
                 <div>
                   <FaArrowAltCircleLeft className="mr-2" /> Back to Items Listing
                 </div>
-              </Link> */}
+              </Link> 
             </div>
             <div className="text-black ms-5 details align-self-center">
               <h2>{itemDetails.description}</h2>
