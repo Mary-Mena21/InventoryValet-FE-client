@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { Button, Image } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { useRouter } from 'next/router';
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import { FaArrowAltCircleLeft } from 'react-icons/fa';
