@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import { FaArrowAltCircleLeft } from 'react-icons/fa';
@@ -69,9 +68,9 @@ export default function ViewItemDetails() {
         <div className="mt-5 d-flex flex-wrap">
           <div className="d-flex flex-row">
             <div>
-              <Image
-                // src={itemDetails.image}
-                src="https://via.placeholder.com/400"
+              <img
+                src={itemDetails.image}
+                // src="https://via.placeholder.com/400"
                 alt={itemDetails.description}
                 style={{ width: '400px', height: '400px', border: '1px solid black' }}
               />
