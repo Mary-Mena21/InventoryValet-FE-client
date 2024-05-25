@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
 import Link from 'next/link';
+// import Image from 'next/image';
 import { useRouter } from 'next/router';
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import { FaArrowAltCircleLeft } from 'react-icons/fa';
@@ -40,28 +41,13 @@ export default function ViewItemDetails() {
   return (
     <>
       <div>
-        <div className="d-flex justify-content-end mt-5 mb-0">
+        <div className="d-flex justify-content-start mt-5 mb-0">
           <Link href={`/item/edit/${itemDetails.id}`} passHref>
-            <Button
-              variant="info"
-              style={{
-                backgroundColor: 'transparent',
-                border: 'none',
-                color: 'black',
-              }}
-            >
+            <Button variant="outline-success" className="ms-3 w-30">
               EDIT
             </Button>
           </Link>
-          <Button
-            onClick={deleteItem}
-            style={{
-              backgroundColor: 'transparent',
-              border: 'none',
-              color: 'black',
-            }}
-            className="d-flex justify-content-end"
-          >
+          <Button variant="outline-danger" className="ms-3 w-30" onClick={deleteItem}>
             DELETE
           </Button>
         </div>
@@ -76,11 +62,11 @@ export default function ViewItemDetails() {
               />
               <br />
               <br />
-              {/* <Link href="/" passHref style={{ cursor: 'pointer', color: 'blue', hover: 'text-indigo-600' }}>
+              <Link href="/" passHref style={{ cursor: 'pointer', color: 'blue', hover: 'text-indigo-600' }}>
                 <div>
-                  <FaArrowAltCircleLeft className="mr-2" /> Back to Items Listing
+                  {/* <FaArrowAltCircleLeft className="mr-2" /> Back to Items Listing */}
                 </div>
-              </Link> */}
+              </Link>
             </div>
             <div className="text-black ms-5 details align-self-center">
               <h2>{itemDetails.description}</h2>
