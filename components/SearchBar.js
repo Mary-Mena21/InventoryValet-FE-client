@@ -9,7 +9,7 @@ export default function SearchBar({ items, query, setQuery }) {
     setQuery(e.target.value);
   };
   // search by description or name
-  const filterItems = items.filter((item) => item?.description.toLowerCase().includes(query.toLowerCase()) || item?.name.toLowerCase().includes(query.toLowerCase()));
+  const filterItems = items.filter((item) => item?.description?.toLowerCase().includes(query.toLowerCase()) || item?.name?.toLowerCase().includes(query.toLowerCase()));
   console.warn(filterItems);
   return (
     <>

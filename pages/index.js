@@ -18,7 +18,7 @@ function Home() {
   const { user } = useAuth();
   const [authUser, setAuthUser] = useState();
   // const [dropdowns, setDropdowns] = useState([]);
-  const [items] = useState([]);
+  const [items, setItems] = useState([]);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(5);
@@ -32,7 +32,8 @@ function Home() {
     onUpdate();
     getItems(page, pageSize)
       .then((data) => {
-        setPagedResult(data);
+        setPagedResult(data.results);
+        setItems(data.results);
       })
       .catch((error) => {
         console.error('Error fetching items:', error);
@@ -46,22 +47,8 @@ function Home() {
 
   // Handle page size change
   const handlePageSizeChange = (event) => {
-    setPageSize(parseInt(event.target.value, 10));
+    setPageSize(parseInt(event.target.value, 5));
   };
-
-  // useEffect(() => {
-  //   onUpdate();
-  //   // getAllCategories();
-  //   getAllItems();
-  // }, []);
-
-  // const handleChange = (e) => {
-  //   if (e.target.value === 'Select a Category') {
-  //     getAllItems();
-  //   } else {
-  //     getItemsByCategory(e.target.value).then(setItems);
-  //   }
-  // };
 
   return (
     <>
@@ -73,7 +60,7 @@ function Home() {
           {pagedResult && (
             <div>
               <div>
-                {pagedResult.results.map((item) => (
+                {pagedResult.results?.map((item) => (
                   <>
                     <ItemCard itemObj={item} />
 
