@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 function ItemCard({ itemObj }) {
   return (
@@ -23,14 +23,14 @@ function ItemCard({ itemObj }) {
           <Card.Img
             variant="top"
             // src={itemObj.image}
-            src="https://via.placeholder.com/100"
+            src={itemObj.image}
             alt="Item Picture"
             style={{ height: '100px', width: '100px' }}
           />
           <Card.Title className="align-self-center text-center fs-6">{itemObj.description}</Card.Title>
         </div>
       </Link>
-      <Link href={`/item/edit/${itemObj.id}`} passHref>
+      {/* <Link href={`/item/edit/${itemObj.id}`} passHref>
         <Button
           variant="info"
           style={{
@@ -41,7 +41,7 @@ function ItemCard({ itemObj }) {
         >
           EDIT
         </Button>
-      </Link>
+      </Link> */}
     </Card>
   );
 }

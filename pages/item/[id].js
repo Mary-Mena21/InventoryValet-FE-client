@@ -1,15 +1,16 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 // eslint-disable-next-line @next/next/no-img-element
 // eslint-disable-next-line import/no-extraneous-dependencies
 // eslint-disable-next-line react-hooks/exhaustive-deps
 import { useState, useEffect } from 'react';
-import { Button, Image } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
 import Link from 'next/link';
 // import Image from 'next/image';
 import { useRouter } from 'next/router';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { FaArrowAltCircleLeft } from 'react-icons/fa';
+// import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import { deleteSingleItem, getSingleItem } from '../../api/itemsData';
 // import { useAuth } from '../../utils/context/authContext';
 // npm i -S react-icons
@@ -54,9 +55,9 @@ export default function ViewItemDetails() {
         <div className="mt-5 d-flex flex-wrap">
           <div className="d-flex flex-row">
             <div>
-              <Image
-                // src={itemDetails.image}
-                src="https://via.placeholder.com/400"
+              <img
+                src={itemDetails.image}
+                // src="https://via.placeholder.com/400"
                 alt={itemDetails.description}
                 style={{ width: '400px', height: '400px', border: '1px solid black' }}
               />
@@ -64,7 +65,7 @@ export default function ViewItemDetails() {
               <br />
               <Link href="/" passHref style={{ cursor: 'pointer', color: 'blue', hover: 'text-indigo-600' }}>
                 <div>
-                  <FaArrowAltCircleLeft className="mr-2" /> Back to Items Listing
+                  {/* <FaArrowAltCircleLeft className="mr-2" /> Back to Items Listing */}
                 </div>
               </Link>
             </div>
