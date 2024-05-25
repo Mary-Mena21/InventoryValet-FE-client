@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 // eslint-disable-next-line @next/next/no-img-element
 // eslint-disable-next-line import/no-extraneous-dependencies
