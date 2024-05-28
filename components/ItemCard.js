@@ -22,8 +22,8 @@ function ItemCard({ itemObj }) {
         <div className="d-flex justify-content-start" style={{ padding: '10px', gap: '10px', width: '260px' }}>
           <Card.Img
             variant="top"
+            src="https://via.placeholder.com/100"
             // src={itemObj.image}
-            src={itemObj.image}
             alt="Item Picture"
             style={{ height: '100px', width: '100px' }}
           />
