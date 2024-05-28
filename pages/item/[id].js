@@ -10,7 +10,7 @@ import Link from 'next/link';
 // import Image from 'next/image';
 import { useRouter } from 'next/router';
 // eslint-disable-next-line import/no-extraneous-dependencies
-// import { FaArrowAltCircleLeft } from 'react-icons/fa';
+import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import { deleteSingleItem, getSingleItem } from '../../api/itemsData';
 // import { useAuth } from '../../utils/context/authContext';
 // npm i -S react-icons
@@ -56,8 +56,8 @@ export default function ViewItemDetails() {
           <div className="d-flex flex-row">
             <div>
               <img
-                src={itemDetails.image}
-                // src="https://via.placeholder.com/400"
+                // src={itemDetails.image}
+                src="https://via.placeholder.com/400"
                 alt={itemDetails.description}
                 style={{ width: '400px', height: '400px', border: '1px solid black' }}
               />
@@ -65,7 +65,8 @@ export default function ViewItemDetails() {
               <br />
               <Link href="/" passHref style={{ cursor: 'pointer', color: 'blue', hover: 'text-indigo-600' }}>
                 <div>
-                  {/* <FaArrowAltCircleLeft className="mr-2" /> Back to Items Listing */}
+                  {/* install react-icons: npm i -S react-icons */}
+                  <FaArrowAltCircleLeft className="mr-2" /> Back to Items Listing
                 </div>
               </Link>
             </div>
