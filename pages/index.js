@@ -47,7 +47,7 @@ function Home() {
 
   // Handle page size change
   const handlePageSizeChange = (event) => {
-    setPageSize(parseInt(event.target.value, 5));
+    setPageSize(parseInt(event.target.value, 10));
   };
 
   return (
@@ -93,9 +93,9 @@ function Home() {
                   value={pageSize}
                   onChange={handlePageSizeChange}
                 >
+                  <option value={1}>1</option>
                   <option value={5}>5</option>
                   <option value={10}>10</option>
-                  <option value={20}>20</option>
                 </select>
               </div>
             </div>
