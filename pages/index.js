@@ -47,7 +47,7 @@ function Home() {
 
   // Handle page size change
   const handlePageSizeChange = (event) => {
-    setPageSize(parseInt(event.target.value, 5));
+    setPageSize(parseInt(event.target.value, 10));
   };
 
   return (
@@ -90,8 +90,40 @@ function Home() {
                   </select>
                 </div>
               </div>
-            )}
-          </div>
+
+              {/* Pagination controls */}
+              <div>
+                <button
+                  type="button"
+                  onClick={() => handlePageChange(page - 1)}
+                  disabled={page <= 1}
+                >
+                  Previous
+                </button>
+                <span>Page {page} of {pagedResult.pageCount}</span>
+                <button
+                  type="button"
+                  onClick={() => handlePageChange(page + 1)}
+                  disabled={page >= pagedResult.pageCount}
+                >
+                  Next
+                </button>
+              </div>
+              <div>
+                <label htmlFor="pageSize">Page Size: </label>
+                <select
+                  id="pageSize"
+                  value={pageSize}
+                  onChange={handlePageSizeChange}
+                >
+                  <option value={1}>1</option>
+                  <option value={5}>5</option>
+                  <option value={10}>10</option>
+                </select>
+              </div>
+            </div>
+          )}
+             </div>
         </>
       ) : (
         <RegisterForm user={user} onUpdate={onUpdate} />
