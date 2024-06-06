@@ -53,19 +53,42 @@ function Home() {
   return (
     <>
       {authUser?.firebaseId === user?.uid ? (
-        <><>
-          <br />
-          <SearchBar items={items} query={query} setQuery={setQuery} />
-        </><div>
-          {pagedResult && (
-            <div>
+        <>
+          <>
+            <br />
+            <SearchBar items={items} query={query} setQuery={setQuery} />
+          </>
+          <div>
+            {pagedResult && (
               <div>
-                {pagedResult.results?.map((item) => (
-                  <>
-                    <ItemCard itemObj={item} />
+                <div>
+                  {pagedResult.results?.map((item) => (
+                    <>
+                      <ItemCard itemObj={item} />
+                    </>
+                  ))}
+                </div>
 
-                  </>
-                ))}
+                {/* Pagination controls */}
+                <div>
+                  <button type="button" onClick={() => handlePageChange(page - 1)} disabled={page <= 1}>
+                    Previous
+                  </button>
+                  <span>
+                    Page {page} of {pagedResult.pageCount}
+                  </span>
+                  <button type="button" onClick={() => handlePageChange(page + 1)} disabled={page >= pagedResult.pageCount}>
+                    Next
+                  </button>
+                </div>
+                <div>
+                  <label htmlFor="pageSize">Page Size: </label>
+                  <select id="pageSize" value={pageSize} onChange={handlePageSizeChange}>
+                    <option value={5}>5</option>
+                    <option value={10}>10</option>
+                    <option value={20}>20</option>
+                  </select>
+                </div>
               </div>
 
               {/* Pagination controls */}
